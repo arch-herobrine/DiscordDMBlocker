@@ -1,0 +1,2 @@
+# DiscordDMBlocker
+自動でセキュリティ措置を有効化し続けるBot
