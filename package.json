@@ -1,0 +1,25 @@
+{
+  "name": "discorddmblocker",
+  "version": "1.0.0",
+  "description": "自動でセキュリティ措置を有効化し続けるBot)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "arch_herobrine",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arch-herobrine/DiscordDMBlocker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arch-herobrine/DiscordDMBlocker/issues"
+  },
+  "homepage": "https://github.com/arch-herobrine/DiscordDMBlocker#readme",
+  "dependencies": {
+    "@replit/node-fetch": "^3.1.0",
+    "better-sqlite3-multiple-ciphers": "^9.0.0",
+    "discord.js": "^14.13.0",
+    "node-cron": "^3.0.2"
+  }
+}
