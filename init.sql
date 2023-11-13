@@ -1,0 +1,1 @@
+create table if not exists guilds(id text unique not null,invite text not null,dm text not null);
