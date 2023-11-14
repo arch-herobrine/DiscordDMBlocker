@@ -1,5 +1,7 @@
 # DiscordDMBlocker
 自動でセキュリティ措置を有効化し続けるBot
+# 導入URL
+[https://discord.com/api/oauth2/authorize?client_id=1173430906564911134&permissions=32&scope=bot%20applications.commands](https://discord.com/api/oauth2/authorize?client_id=1173430906564911134&permissions=32&scope=bot%20applications.commands)
 # Setup
 ## 動作環境
 Node.js v18以降
