@@ -21,6 +21,7 @@ module.exports = {
                     "description":"## このBotの概要\n"+
                     "このBotは設定した通りにセキュリティ措置を12時間ごとに更新し続けるBotです。\n"+
                     "導入リンクは[__こちら__](https://discord.com/api/oauth2/authorize?client_id=1173430906564911134&permissions=32&scope=applications.commands%20bot)。\n"+
+                    "サポートサーバーは[__こちら__](https://discord.gg/W7U4xjhgH4)\n"+
                     "このBotはオープンソースです。\n"+
                     "GitHubのリポジトリ: [__arch-herobrine/DiscordDMBlocker__](https://github.com/arch-herobrine/DiscordDMBlocker)\n"+
                     "## コマンド一覧\n"+
