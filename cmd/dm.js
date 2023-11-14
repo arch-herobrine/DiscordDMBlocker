@@ -1,4 +1,5 @@
 const Database = require("better-sqlite3-multiple-ciphers");
+const fetch = require("@replit/node-fetch");
 const { ApplicationCommandOptionType, ChannelType, ActionRowBuilder, ButtonBuilder, ButtonStyle, PermissionsBitField, OverwriteType, CommandInteraction, Client } = require("discord.js");
 module.exports = {
     data: {
