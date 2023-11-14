@@ -4,6 +4,7 @@ const fetch = require("@replit/node-fetch");
 const Database = require("better-sqlite3-multiple-ciphers");
 const fs = require("fs");
 const path = require("path");
+require("dotenv").config();
 
 const db = new Database("./.data/data.db");
 
@@ -16,9 +17,9 @@ client.token = process.env.token;
 client.commands = new Collection();
 const cmd = [];
 
-const cmdpath = path.join(__dirname,"cmd");
+const cmdpath = path.join(__dirname, "cmd");
 const cmdfiles = fs.readdirSync(cmdpath).filter(file => file.endsWith('.js'));
-for(const file of cmdfiles){
+for (const file of cmdfiles) {
     const filePath = path.join(cmdpath, file);
     require.cache[require.resolve(filePath)] = undefined;
     const command = require(filePath);
@@ -30,16 +31,14 @@ for(const file of cmdfiles){
     }
 }
 
-
-
-client.on("ready", async() => {
+client.on("ready", async () => {
     try {
         await client.application.commands.set(cmd);
     }
     catch (e) {
         console.error(e)
     }
-    console.log(`Ready to as ${client.user.tag}`);
+    console.log(`[INFO] Ready to as ${client.user.tag}.`);
 });
 
 cron.schedule("0 0,12 * * *", async () => {
@@ -52,7 +51,7 @@ cron.schedule("0 0,12 * * *", async () => {
         if (guild.dm == "true") {
             option.dms_disabled_until = new Date(Date.now() + 86400 * 1000).toISOString().replace(/\.[0-9]{3}Z/, "+00:00");
         }
-        await fetch(`https://discord.com/api/v9/guilds/${guild.id}/incident-actions`, { method: "put", headers: { authorization: client.token }, body: JSON.stringify(option) });
+        await fetch(`https://discord.com/api/v9/guilds/${guild.id}/incident-actions`, { method: "put", headers: { "content-type": "application/json", authorization: `Bot ${client.token}` }, body: JSON.stringify(option) });
     }
 });
 
@@ -60,9 +59,6 @@ client.on("guildDelete", async (guild) => {
     db.prepare("delete from guilds where id = ?").run(guild.id);
 });
 
-client.on("guildCreate", async (guild) => {
-    db.prepare("insert into guilds values( ? , ? , ? )").run(guild.id, "false", "false");
-});
 
 client.on("interactionCreate", async (int) => {
     const command = client.commands.get(int.commandName);
