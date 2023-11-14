@@ -39,7 +39,7 @@ module.exports = {
                         },
                         {
                             "name": "招待の無効化",
-                            "value": current.dm == "true" ? "__ON__" : "__OFF__"
+                            "value": current.invite == "true" ? "__ON__" : "__OFF__"
                         }
                     ]
                 }
