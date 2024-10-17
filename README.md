@@ -13,6 +13,8 @@ Node.js v18以降
 そしてリポジトリ直下に`.data`という名前のディレクトリを作成してください
  
 あとはパッケージを`npm i`と実行してインストールしてから`node index.js`を実行すれば起動できます。
+#つかいかた
+`/help`を実行すればだいたい書いてあります
 ### 参考
 [SpecialAgency-Chat/NoMoreDM](https://github.com/SpecialAgency-Chat/NoMoreDM/tree/main)
  
